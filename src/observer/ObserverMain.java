@@ -4,16 +4,16 @@ public class ObserverMain {
 
 	public static void main(String[] args) {
 			
-		Topic topic = new Topic();
-		Observer obs1 = new TopicSubscriber("Spectator 01");
-		Observer obs2 = new TopicSubscriber("Spectator 02");
-		Observer obs3 = new TopicSubscriber("Spectator 03");
+		Instructor instructor = new Instructor();
+		Observer obs1 = new Client("Customer 01");
+		Observer obs2 = new Client("Customer 02");
+		Observer obs3 = new Client("Customer 03");
 		
-		topic.subscribe(obs1);
-		topic.subscribe(obs2);
-		topic.subscribe(obs3);
+		instructor.subscribe(obs1);
+		instructor.subscribe(obs2);
+		instructor.subscribe(obs3);
 		
-		topic.setTopic("New exercise was set");
+		instructor.setInstructor("New exercise was set");
 
 	}
 

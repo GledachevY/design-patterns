@@ -3,24 +3,25 @@ package observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Topic implements Observable {
+public class Instructor implements Observable {
 
 	private List<Observer> observers;
-	private String topic;
+	private String exercise;
 	
-	public Topic() {
-		this.observers = new ArrayList<>();
+	public Instructor() {
+		this.observers =  new ArrayList<Observer>();
 	}
-
 	@Override
 	public void subscribe(Observer topicSubscriber) {
 		this.observers.add(topicSubscriber);
 		topicSubscriber.setTopic(this);
+
 	}
 
 	@Override
 	public void unsubscribe(Observer topicSubscriber) {
 		this.observers.remove(topicSubscriber);
+
 	}
 
 	@Override
@@ -32,16 +33,15 @@ public class Topic implements Observable {
 
 	@Override
 	public String getUpdate() {
-		// Here we can have some logic
-		return this.getTopic();
+		return this.GetExercise();
 	}
-
-	public String getTopic() {
-		return topic;
+	
+	public String GetExercise() {
+		return this.exercise;
 	}
-
-	public void setTopic(String topic) {
-		this.topic = topic;
+	
+	public void setInstructor(String instructor) {
+		this.exercise = instructor;
 		this.notifyObservers();
 	}
 
